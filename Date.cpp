@@ -7,21 +7,17 @@ Date::Date(int m, int d, int y) // constructor with scope
 {
 	setDate(m, d, y);
 }
-void Date::setDate(int m, int d, int y)
+void Date::setDate(int m, int d, int y) //mutator with inputvalidation. see datevalidation function.
 {
-
-}
-int getmonth()
-{
-
-}
-int getday()
-{
-
-}
-int getyear()
-{
-
+	if (!datevalidation(m, d, y))
+	{
+		month =1;
+		day=1;
+		year=1900;
+	}
+	year = y;
+	month = m;
+	day = d;
 }
 
 bool Date::isleapyear() 
@@ -55,37 +51,8 @@ int lastDay(int m, int y)
 
 
 
-		/*
-	switch (m)
-	{
-	case 1: 
-		return 31;
-	case 3:
-		return 31;
-	case 5:
-		return 31;
-	case 7:
-		return 31;
-	case 8:
-		return 31;
-	case 10:
-		return 31;
-	case 12:
-		return 31;
-	case 4:
-		return 30;
-	case 6:
-		return 30;
-	case 9:
-		return 30;
-	case 11:
-		return 30;
-	case 2:
-		return isleapyear(y);
-	default:
-		return 0;
-		*/
-	}
+	
+	
 }
 
 string datedisplay1() // format: month day year
@@ -112,4 +79,9 @@ bool datevalidation(int m, int d, int y)
 	}
 
 	int howmanydays = lastDay(m, y);
+	if (d<1 || d > howmanydays)
+	{
+		return false;
+	}
+	return true;
 }
