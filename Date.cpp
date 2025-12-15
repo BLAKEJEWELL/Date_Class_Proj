@@ -24,13 +24,13 @@ int getyear()
 
 }
 
-bool isleapyear() 
+bool Date::isleapyear() 
 {
-
+	return isleapyear(year);
 }
-bool isleapyear(int year)
+bool Date::isleapyear(int y) 
 {
-
+	return (y % 4 == 0 && y % 100 != 0);
 }
 
 int lastDay()
@@ -39,8 +39,23 @@ int lastDay()
 }
 int lastDay(int m, int y)
 {
-	int t = m;
-	
+	if (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12)
+	{
+		return 31;
+	}
+	else if (m == 4 || m == 6 || m == 7 || m == 11)
+	{
+		return 30;
+	}
+	else
+	{
+		
+		return isleapyear(y);
+	}
+
+
+
+		/*
 	switch (m)
 	{
 	case 1: 
@@ -67,7 +82,9 @@ int lastDay(int m, int y)
 		return 30;
 	case 2:
 		return isleapyear(y);
-
+	default:
+		return 0;
+		*/
 	}
 }
 
