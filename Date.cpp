@@ -1,10 +1,56 @@
+#include "Date.h"
+#include <iostream>
 
-int getmonth();
-int getday();
-int getyear();
+using namespace std;
 
-bool isleapyear();
-bool isleapyear(int year);
+Date::Date(int m, int d, int y) // constructor with scope
+{
+	setDate(m, d, y);
+}
+void Date::setDate(int m, int d, int y)
+{
 
-int lastDay();
-int lastDay(int month, int year);
+}
+int getmonth()
+{
+
+}
+int getday()
+{
+
+}
+int getyear()
+{
+
+}
+
+bool isleapyear() 
+{
+
+}
+bool isleapyear(int year)
+{
+
+}
+
+int lastDay()
+{
+
+}
+int lastDay(int month, int year)
+{
+
+}
+
+string datedisplay1() // format: month day year
+{
+
+}
+string datedisplay2() // format: day month year
+{
+
+}
+string datedisplay3() // format: 00/00/0000
+{
+
+}
